@@ -13,7 +13,7 @@ def timeme(method):
 
 
 
-driver = webdriver.Chrome('chromedriver/chromedriver')
+driver = webdriver.Chrome('google/chromedriver')
 driver.get(keys['product_url'])
 #proposal_origin__flA-p gl-link
 time.sleep(.10)
@@ -44,9 +44,21 @@ driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]
 driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[1]/div/fieldset/div/div[1]/div[9]/div[1]/input').send_keys(keys['zip_code'])
 driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[1]/div/fieldset/div/div[1]/div[11]/div[1]/input').send_keys(keys['phone_number'])
 
-driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[2]/div[2]/div[2]/div/input').send_keys(keys['phone_number'])
-driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[2]/div[2]/div[1]/div/input').send_keys(keys['email'])
 
+driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[2]/div[2]/div[1]/div/input').send_keys(keys['email'])
+#state
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[1]/div/fieldset/div/div[1]/div[8]/div/div").click()
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[1]/div/fieldset/div/div[1]/div[8]/div/div/div/div/div[2]/div/ul/li[4]/span").click()
 #review & pay
 time.sleep(1)
 driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[2]/div[4]/div[1]/button[1]').click()
+#payment method
+time.sleep(2)
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div/div[1]/div[3]/div/div[1]/div/div[2]/form/fieldset/div[1]/div/div[1]/input").send_keys(keys['card_number'])
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div/div[1]/div[3]/div/div[1]/div/div[2]/form/fieldset/div[3]/div[2]/div/div").click()
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div/div[1]/div[3]/div/div[1]/div/div[2]/form/fieldset/div[3]/div[2]/div/div/div/div/div[2]/div/ul/li[12]/span").click()
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div/div[1]/div[3]/div/div[1]/div/div[2]/form/fieldset/div[3]/div[3]/div/div/div/a").click()
+time.sleep(1)
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div/div[1]/div[3]/div/div[1]/div/div[2]/form/fieldset/div[3]/div[3]/div/div/div/div/div[2]/div/ul/li[9]/span").click()
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div/div[1]/div[3]/div/div[1]/div/div[2]/form/fieldset/div[4]/div[1]/input").send_keys(keys["card_cvv"])
+driver.find_element_by_xpath("/html/body/div[1]/div[3]/div/div/div/div[1]/div[4]/div/button/span").click()
