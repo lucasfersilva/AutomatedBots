@@ -13,7 +13,7 @@ def timeme(method):
 
 
 
-driver = webdriver.Chrome('google/chromedriver')
+driver = webdriver.Chrome('chromedriver.exe')
 driver.get(keys['product_url'])
 #proposal_origin__flA-p gl-link
 time.sleep(.10)
@@ -25,7 +25,7 @@ time.sleep(5)
 driver.refresh()
 #click sacola
 time.sleep(3)
-driver.find_element_by_xpath('/html/body/div[2]/div/div/div[1]/div/div[3]/div/div[2]/div[2]/a').click() # sacola
+driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div/div[1]/div/div[3]/div/div[2]/div[2]/a').click() # sacola
 time.sleep(2)
 driver.find_element_by_xpath('/html/body/div[1]/div[5]/div/div[1]/div[1]/div[1]/div[2]/div[1]/form/fieldset/button').click() #checkout
 
